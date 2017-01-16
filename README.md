@@ -1,1 +1,3 @@
-# autotask-hipchat
+# Autotask-Hipchat
+
+Autotask notification integration for Hipchat!
