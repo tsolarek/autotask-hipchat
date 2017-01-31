@@ -27,14 +27,7 @@ class Messenger:
         print r.status_code
         print r.url
         if str(r.status_code) == '401':
-            print "Token expired, getting new auth token"
             oauth = OauthManager(self.roomId)
             oauth.request_access_token()
-            oauth.assign_access_token()
-            print "Auth token generated, sending notification request."
+            oauth.assign_access_token()   
             requests.post(self.host, params=self.url_payload, data=json.dumps(self.data), headers=self.headers)
-        elif str(r.status_code) == '204':
-            print "Token good, notification sent"
-
-
-
