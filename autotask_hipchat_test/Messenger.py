@@ -15,7 +15,7 @@ class Messenger:
         self.card = card
         self.url_payload = {"auth_token": "{}".format(self.auth_token)}
         self.data = {
-            'message': 'test',
+            'message': '{}'.format(self.card['activity']['html'],
             'card': self.card,
             'attach_to': '{}'.format(self.message_id),
             'message_format': 'html',
